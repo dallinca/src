@@ -1,4 +1,4 @@
-package client.turn;
+package game.turn;
 
 /**
  * All action methods associated with making purchases.

@@ -4,7 +4,7 @@ import shared.communication.results.*;
 
 /**
  * Sends all to-server requests to the client communicator for packaging
- * Checks responses for validity, handles errors from requests when responses are invalid.
+ * Interprets responses, handles errors from requests when responses are invalid.
  * 
  * @author jchrisw
  *
@@ -79,6 +79,16 @@ public class ClientFacade {
 		}		
 
 		return result;
+	}
+	
+	/**
+	 * Parses JSON data and maps it onto client model.
+	 * 
+	 * @pre Given JSONdata from server
+	 * @post Data will be mapped onto client model.
+	 */
+	public void parseJSONData(Object JSONdata){
+				
 	}
 	
 
