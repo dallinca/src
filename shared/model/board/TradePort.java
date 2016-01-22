@@ -1,4 +1,4 @@
-package game.board;
+package shared.model.board;
 
 import shared.definitions.PortType;
 

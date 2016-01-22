@@ -1,7 +1,7 @@
-package game.player;
-import game.model.ResourceCard;
-
+package shared.model.player;
 import java.util.*;
+
+import shared.model.items.ResourceCard;
 
 /**
  * The ResourceCards class is used to store and get individual players cards
@@ -14,7 +14,7 @@ import java.util.*;
  *
  * @invariant 0 <= Arraylist.size() <= 3
  */
-public class PlayerResourceCards {
+public class ResourceCardHard {
 	
 	  private ArrayList<ResourceCard> resourceCards;
 	  //private enum resourceCards { brick, wheat, ore, sheep, lumber};
@@ -25,7 +25,7 @@ public class PlayerResourceCards {
 	 * @pre A Player object exists
 	 * @post new ArrayList resourceCards = 0 - 3
 	 */
-	  PlayerResourceCards(){}
+	  ResourceCardHard(){}
 	 
 	/**
 	 * adds resource cards to player
@@ -80,5 +80,16 @@ public class PlayerResourceCards {
 	  */
 	   public boolean canDoBuyCity(){
 		   return false;
+	   }
+	   
+	   /**
+	    * Retrieves the number of cards in the player's resource card hand
+	    * 
+	    * @pre None
+	    * 
+	    * @post The Number of cards in the Players Resource Hand
+	    */
+	   public int getResourceCardHandSize() {
+		   return 0;
 	   }
 }

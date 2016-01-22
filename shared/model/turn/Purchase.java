@@ -1,4 +1,4 @@
-package game.turn;
+package shared.model.turn;
 
 /**
  * All action methods associated with making purchases.

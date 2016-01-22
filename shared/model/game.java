@@ -1,10 +1,14 @@
-package game;
+package shared.model;
 
 import java.util.ArrayList;
 
-import game.model.*;
-import game.player.*;
-import game.board.Board;
+import shared.model.items.DevelopmentCard;
+import shared.model.items.Municipal;
+import shared.model.items.ResourceCard;
+import shared.model.items.Road;
+import shared.model.items.*;
+import shared.model.player.*;
+import shared.model.board.Board;
 
 
 /**
@@ -17,7 +21,7 @@ public class game {
 	private Player currentPlayer;
 	private Player nextPlayer;
 	private ResourceCard[] resourceDeck = null;
-	private DevelopmentCard[] developmentDeck = null;;
+	private DevelopmentCard[] developmentDeck = null;
 	private Board board;
 	private boolean largestArmy;
 	private boolean longestRoad;
@@ -135,7 +139,7 @@ public class game {
 	 * Whenever somebody is taking development cards from the bank, this method is called. 
 	 * This method makes the necessary adjustment to the deck, which cards are still in it, and how many total are left.
 	 * 
-	 * @pre take is postive, less than the amount of remaining development cards in the deck, and that the player object is a real non-bull object
+	 * @pre take is positive, less than the amount of remaining development cards in the deck, and that the player object is a real non-bull object
 	 * @param int take is a number of the development cards a player is taking
 	 * @param Player player is the player purchasing the cards
 	 */
@@ -149,7 +153,7 @@ public class game {
 	 * This method will check after every action if the current player has ten or eleven points. If they do, it returns true.
 	 * And then the game is over
 	 * 
-	 * @pre an action must have just occured (build a road, play a development card, build a city or settlement, etc.)
+	 * @pre an action must have just occurred (build a road, play a development card, build a city or settlement, etc.)
 	 * 
 	 * @post a boolean value as to whether or not the game is over
 	 */

@@ -1,9 +1,9 @@
-package game.board;
+package shared.model.board;
 
-import game.board.exceptions.*;
-import game.model.City;
-import game.model.Road;
-import game.model.Settlement;
+import shared.model.items.Road;
+import shared.model.items.Settlement;
+import shared.model.board.exceptions.*;
+import shared.model.items.City;
 
 /**
  * The Board Class is used to store all the information about the game board

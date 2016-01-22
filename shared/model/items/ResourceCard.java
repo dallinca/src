@@ -1,4 +1,4 @@
-package game.model;
+package shared.model.items;
 
 import shared.definitions.ResourceType;
 

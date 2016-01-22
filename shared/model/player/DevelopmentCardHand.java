@@ -1,8 +1,8 @@
-package game.player;
-
-import game.model.DevelopmentCard;
+package shared.model.player;
 
 import java.util.*;
+
+import shared.model.items.DevelopmentCard;
 
 /**
  * The DevelopmentCards class keeps track of a players development cards 
@@ -16,7 +16,7 @@ import java.util.*;
  */
 
 
-public class PlayerDevelopmentCards {
+public class DevelopmentCardHand {
 	
 	private ArrayList<DevelopmentCard> developmentCards;
 	//private enum developmentCards {knight, progress, victoryPoint};
@@ -28,7 +28,7 @@ public class PlayerDevelopmentCards {
 	 * @pre A Player object exists
 	 * @post new ArrayList DevelopmentCards = 0 
 	 */
-    PlayerDevelopmentCards(){}
+	DevelopmentCardHand(){}
     
     /**
 	 * adds development cards to player
@@ -46,7 +46,7 @@ public class PlayerDevelopmentCards {
 	 * @pre None
 	 * @post deleted from ArrayList data structure
 	 */
-    void deleteCard(){}
+    void removeCard(){}
     
 	/**
 	 * Gets the players development cards

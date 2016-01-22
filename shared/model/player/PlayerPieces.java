@@ -1,8 +1,11 @@
-package game.player;
+package shared.model.player;
 
-import game.model.*;
+import shared.model.items.*;
 
 import java.util.*;
+
+import shared.model.items.Road;
+import shared.model.items.Settlement;
 
 /**
  * The PlayerPieces class keeps track of a players settlements and cities. 

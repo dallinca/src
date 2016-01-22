@@ -1,4 +1,4 @@
-package game.turn;
+package shared.model.turn;
 
 
 /**

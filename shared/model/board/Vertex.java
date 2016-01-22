@@ -1,7 +1,7 @@
-package game.board;
+package shared.model.board;
 
-import game.model.Municipal;
 import shared.locations.VertexLocation;
+import shared.model.items.Municipal;
 
 /**
  * The Vertex class is used to store whether a vertex has a municipal

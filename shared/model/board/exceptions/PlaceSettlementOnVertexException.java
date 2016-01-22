@@ -1,4 +1,4 @@
-package game.board.exceptions;
+package shared.model.board.exceptions;
 
 @SuppressWarnings("serial")
 public class PlaceSettlementOnVertexException extends Exception {

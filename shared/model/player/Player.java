@@ -1,4 +1,4 @@
-package game.player;
+package shared.model.player;
 /**
  * The Player class is used to create a player object
  * 

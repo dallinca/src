@@ -1,7 +1,7 @@
-package game.board;
+package shared.model.board;
 
-import game.model.Road;
 import shared.locations.EdgeLocation;
+import shared.model.items.Road;
 
 /**
  * The Edge class is used to store whether an edge has a road owned by a player

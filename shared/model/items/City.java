@@ -1,4 +1,4 @@
-package game.model;
+package shared.model.items;
 
 /**
  * Class stores the information about where cities are stored
