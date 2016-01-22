@@ -9,8 +9,14 @@ import game.player.Settlement;
  * The Board Class is used to store all the information about the game board
  * including the map with its hexes, vertices, edges, and tradeports.
  * 
+ * Operations allow for independent players to place roads, settlements, and
+ * removes settlements when a city is placed. 
  * 
  *
+ * Domain:
+ * 		ArrayList Hexes: 18 roads
+ * 		ArrayList Vertices: 54 vertices
+ *		ArrayList Edges: 54 edges
  */
 public class Board {
 
@@ -148,6 +154,32 @@ public class Board {
 		}
 		// Place the city on the vertex
 	}
+	
+
+	/**
+	 * Places a settlement on a vertex
+	 * 
+	 * @pre ArrayList settlement > 0
+	 * @pre A vertex must not be occupied by another settlement
+	 * @pre A vertex must be 2 or more borders away from the nearest settlement
+	 * @pre player must have 1 brick, 1 wheat, 1 wool, and 1 wood resource cards
+	 * 
+	 * @post remove settlement from ArrayList settlement 
+	 * @post settlement is placed on vertex
+	 */
+	   void placeSettlement(){}
+	   
+	/**
+	 * Removes a settlement and places a city on the vertex 
+	 * 
+	 * @pre ArrayList city > 0
+	 * @pre current players settlement is on vertex
+	 * @pre player must have 2 wheat and 3 ore resource cards
+	 * 
+	 * @post remove city from ArrayList city
+	 * @post city is placed on vertex
+	 */
+	   void placeCity(){}
 	
 	
 }

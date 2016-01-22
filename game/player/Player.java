@@ -2,6 +2,7 @@ package game.player;
 /**
  * The Player class is used to create a player object
  * 
+ * It has methods for checking if a player can place roads or settlements
  *
  * Domain:
  * 		totalVictoryPoints: an integer, initialized to 2
@@ -38,5 +39,34 @@ public class Player {
 	 * @post Returns building cost card
 	 */
 	void getbuildingCostCard(){}
+	
+
+	 /**
+	  * checks if a player can buy a road
+	  *   
+	  * @return boolean
+	  */
+	   public boolean canDoBuyRoad(){
+		   return false;
+	   }
+	   
+	 /**
+	  * checks if a player can buy a settlement
+	  *   
+	  * @return boolean
+	  */
+	   public boolean canDoBuySettlement(){
+		   return false;
+	   }
+	   
+	 /**
+	  * checks if a player can buy a city
+	  *   
+	  * @return boolean
+	  */
+	   public boolean canDoBuyCity(){
+		   return false;
+	   }
+	     
 	
 }

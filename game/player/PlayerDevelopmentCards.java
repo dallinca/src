@@ -14,7 +14,7 @@ import java.util.*;
  */
 
 
-public class DevelopmentCards {
+public class PlayerDevelopmentCards {
 	private enum developmentCards {knight, progress, victoryPoint};
     private enum progressCards {roadBuilder, monopoly, yearOfPlenty};
      
@@ -24,7 +24,7 @@ public class DevelopmentCards {
 	 * @pre A Player object exists
 	 * @post new ArrayList DevelopmentCards = 0 
 	 */
-    DevelopmentCards(){}
+    PlayerDevelopmentCards(){}
     
     /**
 	 * adds development cards to player
