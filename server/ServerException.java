@@ -1,6 +1,10 @@
 package server;
 
 @SuppressWarnings("serial")
+/**
+ * Exception thrown by server when an error occurs.
+ *
+ */
 public class ServerException extends Exception {
 
 	public ServerException() {

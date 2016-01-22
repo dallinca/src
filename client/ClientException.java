@@ -1,6 +1,10 @@
 package client;
 
 @SuppressWarnings("serial")
+/**
+ * An exception thrown by client when it encounters an error.
+ *
+ */
 public class ClientException extends Exception {
 
 	public ClientException() {

@@ -2,39 +2,42 @@ package client;
 
 import shared.communication.results.*;
 
+/**
+ * Sends all to-server requests to the client communicator for packaging
+ * Checks responses for validity, handles errors from requests when responses are invalid.
+ * 
+ * @author jchrisw
+ *
+ */
 public class ClientFacade {
-
-
-	/*
-	private LinkedList<ClientState> clientStates;
-	private ClientState currentState;
-
-	public ClientState getCurrentState() {
-		return currentState;
-	}
-
-	public void setCurrentState(ClientState currentState) {
-		this.currentState = currentState;
-	}*/
 
 	private ClientCommunicator cc;
 
+	/**
+	 * Creates fascade, specifying the location of the master server.
+	 * @param serverName
+	 * @param portNumber
+	 * 
+	 * @pre Server name and port number specifiy an existing server.
+	 * @post Client will be able to communicate with server.
+	 */
 	ClientFacade(String serverName, int portNumber){
 		cc = new ClientCommunicator(serverName, portNumber);
-		//	clientStates = new LinkedList<ClientState>();
 	}
 
-	ClientFacade(){
-		//currentState = null;
-		//	clientStates = new LinkedList<ClientState>();
-		cc = new ClientCommunicator();		
+	ClientFacade(){		
+		cc = new ClientCommunicator();				
 	}
 
-	public boolean fetchCurrentState(String username){
-		return false;
-	}
-
-	public PollServer_Result pollServer(){
+	/**
+	 * Gets the current game state from the server.
+	 * @param username
+	 * @return
+	 * 
+	 * @pre Client is validated and participating in a game.
+	 * @post Communicator will return usable PollServer_Result.
+	 */
+	public PollServer_Result pollServer(String username){
 
 		PollServer_Result result;
 
@@ -49,10 +52,18 @@ public class ClientFacade {
 			e.printStackTrace();			
 		}
 
-
 		return result;		
 	}
 
+	/**
+	 * Validates the given user with the server database.
+	 * @param username
+	 * @param password
+	 * @return
+	 * 
+	 * @pre None
+	 * @post Communicator will return usable ValidateUser_Result
+	 */
 	public ValidateUser_Result validateUser(String username, String password) {		
 
 		ValidateUser_Result result; 
@@ -69,6 +80,7 @@ public class ClientFacade {
 
 		return result;
 	}
+	
 
 
 }
