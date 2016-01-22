@@ -1,4 +1,4 @@
-package client.turn;
+package game.turn;
 
 
 /**
@@ -7,22 +7,18 @@ package client.turn;
  *
  */
 public class Action {
-	
-	
-	/**
-	 * Specifies the different categories of actions which can be performed.
-	 * Actions are grouped based on basic similiarities in execution.
-	 * 
-	 */
-	public enum ActionCategory {
-	    PURCHASE, TRADE, PLAYCARD    	    	    
-	}
-	
+		
 	/**
 	 * Specifies differing types of actions which can be performed.
 	 *
 	 */	
     public static enum ActionType  {
+    	
+    	/*
+    	 * Specifies the different categories of actions which can be performed.
+    	 * Actions are grouped based on basic similarities in execution.
+    	 */
+    	PURCHASE(), TRADE(), PLAYCARD(),
 
     	PURCHASE_CITY(PURCHASE), PURCHASE_DEVELOPMENT(PURCHASE), 
     	PURCHASE_ROAD(PURCHASE), PURCHASE_SETTLEMENT(PURCHASE),
@@ -30,9 +26,9 @@ public class Action {
     	TRADE_BANK(TRADE), TRADE_PLAYER(TRADE),
     	
     	PLAYCARD_BUILDROADS(PLAYCARD), PLAYCARD_KNIGHT(PLAYCARD), 
-    	PLAYCARD_MONOPOLY(PLAYCARD), PLAYCARD_YEAROFPLENTY(PLAYCARD);
+    	PLAYCARD_MONOPOLY(PLAYCARD), PLAYCARD_YEAROFPLENTY(PLAYCARD), ;
     	    	
-    	private final ActionCategory category;
+    	private ActionType category;
 
     	/**
     	 * Assigns action category to given action type.
@@ -40,16 +36,20 @@ public class Action {
     	 * @pre None.
     	 * @post Action category will be assigned to given action type.
     	 */
-	    private ActionType(final ActionCategory category) {
+	    private ActionType(ActionType category) {
             this.category = category;
         }
+	    
+	    private ActionType(){
+	    	this.category = null;
+	    }
     	
 	    /**
     	 * Returns the category of action this is.
     	 * @pre None.
     	 * @post Returns action category of action type.
     	 */
-	    ActionCategory getCategory(){
+	    ActionType getCategory(){
 	    	return this.category;
 	    };    	
     }
@@ -65,9 +65,9 @@ public class Action {
 	 */
 	public static void doAction(ActionType action){
 		
-		if (action.getCategory() == ActionCategory.PURCHASE) doPurchase(action);
-		else if (action.getCategory() == ActionCategory.TRADE) doTrade(action);
-		else if (action.getCategory() == ActionCategory.PLAYCARD) playDevelopmentCard(action);	
+		if (action.getCategory() == ActionType.PURCHASE) doPurchase(action);
+		else if (action.getCategory() == ActionType.TRADE) doTrade(action);
+		else if (action.getCategory() == ActionType.PLAYCARD) playDevelopmentCard(action);	
 		
 	}
 

@@ -1,5 +1,7 @@
 package client;
 
+import shared.communication.results.PollServer_Result;
+
 /**
  * Polls server every few seconds to grab new information 
  * and synchronize with game state of all players.

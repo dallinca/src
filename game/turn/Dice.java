@@ -1,4 +1,6 @@
-package client.turn;
+package game.turn;
+
+import java.util.Random;
 
 /**
  * All action methods associated with dice rolls.
@@ -14,7 +16,9 @@ public class Dice {
 	 */
 	static void rollDice(){
 		
-		int roll;
+		Random ran = new Random();
+		
+		int roll = ran.nextInt(6) + ran.nextInt(6) +2;	//Roll 2d6	
 		
 		if (roll == 7){
 			moveRobber();
