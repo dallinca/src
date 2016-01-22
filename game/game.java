@@ -15,15 +15,20 @@ public class game {
 	private Player[] players = null;
 	private Player currentPlayer;
 	private Player nextPlayer;
-	private ResourceCards[] resourceDeck = null;
-	private DevelopmentCards[] developmentDeck = null;;
+	private ResourceCard[] resourceDeck = null;
+	private DevelopmentCard[] developmentDeck = null;;
 	private Board board;
 	private boolean largestArmy;
 	private boolean longestRoad;
 	private Road[] roads = null;
 	private Municipal[] infrastructure = null;
 	//a rather comedic name for the Robber don't you think?
-	private Robber robbingHood;
+	
+	/*
+	 * For now lets just say the board has the robber, right now you can query which hex
+	 * the robber is on
+	 */
+	//private Robber robbingHood;
 	
 	
 	/**
@@ -57,6 +62,7 @@ public class game {
 	public Player getCurrentPlayer() {
 		//return the name of the player or the player object itself?
 		//What would be the purpose of sending something a player?
+		return null;
 	}
 	
 	/**
@@ -76,7 +82,7 @@ public class game {
 	 *  
 	 * @param an array containing all of the resource cards (96).
 	 */
-	public void setResourceDeck(ResourceCards[] theResources) {
+	public void setResourceDeck(ResourceCard[] theResources) {
 		
 	}
 	
@@ -87,7 +93,7 @@ public class game {
 	 * 
 	 * @param an array of DevelopmentCards that will become the deck.
 	 */
-	public void setDevelopmentDeck(DevelopmentCards[] arrestedDevelopment) {
+	public void setDevelopmentDeck(DevelopmentCard[] arrestedDevelopment) {
 		
 		//developmentDeck = new DevelopmentCard[arrestDevelopment.length()];
 		
@@ -107,7 +113,7 @@ public class game {
 	 * @param an array of the resource cards that are to be added to the decks: toTurnIn.
 	 * @param an array of the resource cards that are to be taken away: toTake.
 	 */
-	public void resourceCardTransaction(Player bankingPlayer, ResourceCards[] toTake, ResourceCards[] toTurnIn) {
+	public void resourceCardTransaction(Player bankingPlayer, ResourceCard[] toTake, ResourceCard[] toTurnIn) {
 		
 	}
 	
@@ -120,7 +126,7 @@ public class game {
 	 * @post
 	 * 
 	 */	
-	public void tradeTransaction(Player one, ResourceCards[] oneToTrade, Player two, ResourceCards[] twoToTrade) {
+	public void tradeTransaction(Player one, ResourceCard[] oneToTrade, Player two, ResourceCard[] twoToTrade) {
 	
 	}
 	
@@ -147,7 +153,7 @@ public class game {
 	 * @post a boolean value as to whether or not the game is over
 	 */
 	public boolean doWeHaveAWinner() {
-		
+		return false;
 	}
 	
 	

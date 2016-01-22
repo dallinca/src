@@ -15,8 +15,10 @@ import java.util.*;
 
 
 public class PlayerDevelopmentCards {
-	private enum developmentCards {knight, progress, victoryPoint};
-    private enum progressCards {roadBuilder, monopoly, yearOfPlenty};
+	
+	private ArrayList<DevelopmentCard> developmentCards;
+	//private enum developmentCards {knight, progress, victoryPoint};
+    //private enum progressCards {roadBuilder, monopoly, yearOfPlenty};
      
     /**
 	 * Initializes DevelopmentCards
@@ -50,6 +52,6 @@ public class PlayerDevelopmentCards {
 	 * @pre None
 	 * @post Returns the players development cards
 	 */
-	public ArrayList getDevelopmentCards(){
+	public ArrayList<DevelopmentCard> getDevelopmentCards(){
 		return null;}
 }
