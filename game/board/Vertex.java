@@ -1,5 +1,6 @@
 package game.board;
 
+import game.player.Municipal;
 import shared.locations.VertexLocation;
 
 /**

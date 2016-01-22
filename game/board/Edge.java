@@ -1,5 +1,6 @@
 package game.board;
 
+import game.player.Road;
 import shared.locations.EdgeLocation;
 
 /**
