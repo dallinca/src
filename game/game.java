@@ -2,6 +2,7 @@ package game;
 
 import java.util.ArrayList;
 
+import game.model.*;
 import game.player.*;
 import game.board.Board;
 

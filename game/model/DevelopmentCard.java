@@ -1,4 +1,4 @@
-package game.player;
+package game.model;
 
 import shared.definitions.DevCardType;
 

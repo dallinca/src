@@ -1,6 +1,6 @@
 package game.board;
 
-import game.player.Municipal;
+import game.model.Municipal;
 import shared.locations.VertexLocation;
 
 /**

@@ -1,5 +1,7 @@
 package game.player;
 
+import game.model.*;
+
 import java.util.*;
 
 /**

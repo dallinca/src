@@ -1,9 +1,9 @@
 package game.board;
 
 import game.board.exceptions.*;
-import game.player.City;
-import game.player.Road;
-import game.player.Settlement;
+import game.model.City;
+import game.model.Road;
+import game.model.Settlement;
 
 /**
  * The Board Class is used to store all the information about the game board

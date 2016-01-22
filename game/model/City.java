@@ -1,4 +1,4 @@
-package game.player;
+package game.model;
 
 /**
  * Class stores the information about where cities are stored

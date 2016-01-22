@@ -1,4 +1,6 @@
 package game.player;
+import game.model.ResourceCard;
+
 import java.util.*;
 
 /**
