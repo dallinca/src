@@ -1,5 +1,5 @@
 package game.board;
 
-public class DCBoard {
+public class Board {
 
 }
