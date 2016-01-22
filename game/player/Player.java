@@ -2,7 +2,6 @@ package game.player;
 /**
  * The Player class is used to create a player object
  * 
- * Operations 
  *
  * Domain:
  * 		totalVictoryPoints: an integer, initialized to 2

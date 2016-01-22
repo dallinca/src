@@ -3,8 +3,8 @@ package game.player;
 import java.util.*;
 
 /**
- * The Municipal class keeps track of a players roads, settlements, cities. 
- * It has methods for placing roads, settlements, and cities
+ * The Municipal class keeps track of a players settlements and cities. 
+ * It has methods for placing settlements, and cities
  * 
  * Operations allow for independent players to place roads, settlements, and
  * removes settlements when a city is placed. 
@@ -27,11 +27,36 @@ public class Municipal {
 	 * 
 	 * @pre A Player object exists
 	 * 
-	 * @post new placeRoad() = 2
-	 * @post new placeSettlement() = 2
 	 */
-	   Municipal(){}  
+	   Municipal(){}
 	   
+	 /**
+	  * checks if a player can buy a road
+	  *   
+	  * @return boolean
+	  */
+	   public boolean canDoBuyRoad(){
+		   return false;
+	   }
+	   
+	 /**
+	  * checks if a player can buy a settlement
+	  *   
+	  * @return boolean
+	  */
+	   public boolean canDoBuySettlement(){
+		   return false;
+	   }
+	   
+	 /**
+	  * checks if a player can buy a city
+	  *   
+	  * @return boolean
+	  */
+	   public boolean canDoBuyCity(){
+		   return false;
+	   }
+	     
 	/**
 	 * Places a road on a border 
 	 * 
@@ -56,16 +81,6 @@ public class Municipal {
 	 * @post settlement is placed on vertex
 	 */
 	   void placeSettlement(){}
-	   
-	/**
-	 * Removes a settlement from it's vertex 
-	 * 
-	 * @pre A vertex must contain a settlement
-	 * 
-	 * @post append settlement to ArrayList settlement 
-	 * @post settlement removed from vertex
-	 */
-	   void removeSettlement(){}
 	   
 	/**
 	 * Removes a settlement and places a city on the vertex 

@@ -12,7 +12,6 @@ import shared.communication.results.*;
 
 public class ClientCommunicator {
 
-
 	private static String SERVER_HOST;
 	private static int SERVER_PORT;
 	private static String URL_PREFIX;
@@ -67,7 +66,6 @@ public class ClientCommunicator {
 	 */
 	public PollServer_Result pollServer() throws ClientException
 	{
-		
 		return (PollServer_Result)doPost("/PollServer", new PollServer_Params());
 	}
 
@@ -88,7 +86,6 @@ public class ClientCommunicator {
 		Object result = null;
 
 		return result;		
-
 	}
 
 

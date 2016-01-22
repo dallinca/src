@@ -107,6 +107,16 @@ public class Board {
 		}
 		// Place the settlement on the vertex
 	}
+	
+	/**
+	 * Removes a settlement from it's vertex 
+	 * 
+	 * @pre A vertex must contain a settlement
+	 * 
+	 * @post append settlement to ArrayList settlement 
+	 * @post settlement removed from vertex
+	 */
+	   void removeSettlement(){}
 
 	/**
 	 * Determine whether a specified player's city can be placed on a specified vertex
