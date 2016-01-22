@@ -116,5 +116,16 @@ public class game {
 		
 	}
 	
+	/**
+	 * This method is responsible for verifying if the game has ended.
+	 * 
+	 * @pre
+	 * 
+	 * @post 
+	 */
+	public DCPlayer endGame() {
+		
+	}
+	
 	
 }
