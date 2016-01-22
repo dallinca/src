@@ -57,16 +57,7 @@ public class Municipal {
 		   return false;
 	   }
 	     
-	/**
-	 * Places a road on a border 
-	 * 
-	 * @pre ArrayList road > 0
-	 * @pre a border must not be occupied by another road
-	 * @pre player must have 1 brick and 1 wood resource cards
-	 * 
-	 * @post remove road from ArrayList road
-	 * @post road is placed on border
-	 */
+	
 	   void placeRoad(){}
 	   
 	/**
