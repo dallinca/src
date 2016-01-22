@@ -66,7 +66,7 @@ public class Board {
 		// edge has an adjacent edge that has a road owned by the player of the road to place
 		return true;
 	}
-
+	
 	/**
 	 * Places a road on a specified edge
 	 * 
