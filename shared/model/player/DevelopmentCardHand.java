@@ -55,5 +55,17 @@ public class DevelopmentCardHand {
 	 * @post Returns the players development cards
 	 */
 	public ArrayList<DevelopmentCard> getDevelopmentCards(){
-		return null;}
+		return null;
+	}
+	
+	/**
+	 * Gets the number of cards in the players hand
+	 * 
+	 * @pre none
+	 * 
+	 * @post
+	 */
+	public int getDevelopmentCardHandSize() {
+		return 0;
+	}
 }
