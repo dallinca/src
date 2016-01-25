@@ -67,6 +67,31 @@ public class Player {
 	   public boolean canDoBuyCity(){
 		   return false;
 	   }
-	     
+
+		/**
+		 * Checks whether the player can collect resources
+		 * 
+		 * @pre rollValue must be between 1-6 or 8-11
+		 * 
+		 * @post returns whether the Player can collect resources(may collect nothing)
+		 */
+		public boolean canDoCollectResources(int rollValue) {
+			
+			return false;
+		}
+		
+		/**
+		 * Has the Player collect the resources based off the given roll value
+		 * 
+		 * @pre canDoCollectResources() == true
+		 * 
+		 * @post The Player will have collected the resources based off the given roll value
+		 */
+		public void collectResources(int rollValue) throws CollectResourcesException {
+			if(canDoCollectResources(rollValue) == false) {
+				throw new CollectResourcesException("Player cannot currently collect resources, possibly invalid roll value");
+			}
+			
+		}
 	
 }
