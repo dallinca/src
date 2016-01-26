@@ -25,7 +25,7 @@ public class Edge {
 	 * 
 	 * @post Return value says whether the edge has a road
 	 */
-	public boolean checkIfHasRoad() {
+	public boolean hasRoad() {
 		if(road == null) {
 			return false;
 		}

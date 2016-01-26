@@ -7,14 +7,12 @@ public class DevelopmentCard {
 	private DevCardType devCardType;
 	private boolean hasBeenPlayed;
 
-	public DevelopmentCard() {}
+	public DevelopmentCard(DevCardType devCardType) {
+		this.devCardType = devCardType;
+	}
 
 	public DevCardType getDevCardType() {
 		return devCardType;
-	}
-
-	public void setDevCardType(DevCardType devCardType) {
-		this.devCardType = devCardType;
 	}
 
 	public boolean isHasBeenPlayed() {

@@ -2,6 +2,10 @@ package shared.model.board;
 
 import shared.model.items.Road;
 import shared.model.items.Settlement;
+import shared.model.player.Player;
+import shared.model.player.exceptions.AllPiecesPlayedException;
+import shared.model.player.exceptions.CannotBuyException;
+import shared.model.player.exceptions.InsufficientPlayerResourcesException;
 import shared.model.board.exceptions.*;
 import shared.model.items.City;
 
@@ -60,61 +64,80 @@ public class Board {
 	
 	/**
 	 * Determines whether a specified player's road can be placed on a specified edge
+	 * This call should be happening after the player has already verified ability to purchase a road
 	 * 
-	 * @pre road != null, edge != null
+	 * @pre player != null, edge != null
 	 * 
 	 * @post Return value is whether an edge can be placed on the specified edge
 	 */
-	public boolean canDoPlaceRoadOnEdge(Road road, Edge edge) {
-		// should be able to ask the road which player it belongs to
-		// road not null, and has player
-		// edge not null, and does not have a road
-		// edge has an adjacent edge that has a road owned by the player of the road to place
+	public boolean canDoPlaceRoadOnEdge(Player player, Edge edge) {
+		// player not null, edge not null, and does not have a road
+		if(player == null || edge == null || edge.hasRoad() == true) {
+			return false;
+		}
+		// edge has an adjacent edge that has a road owned by the player, that does not
+		// have an enemy municipality on the converging vertex
+		// TODO
 		return true;
 	}
 	
 	/**
 	 * Places a road on a specified edge
+	 * @throws AllPiecesPlayedException 
+	 * @throws InsufficientPlayerResourcesException 
+	 * @throws CannotBuyException 
 	 * 
 	 * @pre canDoPlaceRoadOnEdge != false,
 	 * 
 	 * @post road is placed on the specified edge, or PlaceRoadOnEdgeException thrown
 	 */
-	public void placeRoadOnEdge(Road road, Edge edge) throws PlaceRoadOnEdgeException {
-		if(canDoPlaceRoadOnEdge(road, edge) == false) {
+	public void placeRoadOnEdge(Player player, Edge edge) throws PlaceRoadOnEdgeException, CannotBuyException, InsufficientPlayerResourcesException, AllPiecesPlayedException {
+		if(canDoPlaceRoadOnEdge(player, edge) == false) {
 			throw new PlaceRoadOnEdgeException("canDoPlaceRoadOnEdge = false");
 		}
 		// Place the road on the edge
+		player.BuyRoad(edge);
 	}
 
 	/**
 	 * Determine whether a specified player's settlement can be placed on a specified vertex
+	 * This call should be happening after the player has already verified ability to purchase a settlement
 	 * 
 	 * @pre vertex != null, settlement != null
 	 * 
 	 * @post Return value is whether the specified settlement can be placed on the specified vertex
 	 */
-	public boolean canDoPlaceSettlementOnVertex(Settlement settlement, Vertex vertex) {
-		// Ideally I should be able to ask the settlement which player it belongs to
-		// settlement not null, and has player, and does not already have a vertex
-		// vertex not null, and does not have any player's settlement or city
+	public boolean canDoPlaceSettlementOnVertex(Player player, Vertex vertex) {
+		// player not null, vertex not null, and does not have any player's settlement or city
+		if(player == null || vertex == null || vertex.hasMunicipal() == true) {
+			return false;
+		}
+		
 		// vertex does not have an adjacent vertex with any players settlement or city
+		// TODO
+		
 		// vertex has an adjacent border that has a road owned by the player of the settlement to place
+		// TODO
+		
 		return true;
 	}
 
 	/**
 	 * Places a settlement on a specified vertex
+	 * @throws AllPiecesPlayedException 
+	 * @throws InsufficientPlayerResourcesException 
+	 * @throws CannotBuyException 
 	 * 
 	 * @pre canDoPlaceSettlementOnVertex != false,  
 	 * 
 	 * @post settlement is placed on the specified vertex, or PlaceSettlementOnVertexException thrown
 	 */
-	public void placeSettlementOnVertex(Settlement settlement, Vertex vertex) throws PlaceSettlementOnVertexException {
-		if(canDoPlaceSettlementOnVertex(settlement, vertex) == false) {
+	public void placeSettlementOnVertex(Player player, Vertex vertex) throws PlaceSettlementOnVertexException, CannotBuyException, InsufficientPlayerResourcesException, AllPiecesPlayedException {
+		if(canDoPlaceSettlementOnVertex(player, vertex) == false) {
 			throw new PlaceSettlementOnVertexException("canDoPlaceSettlementOnVertex = false");
 		}
 		// Place the settlement on the vertex
+		player.BuySettlement(vertex);
 	}
 	
 	/**
@@ -129,57 +152,38 @@ public class Board {
 
 	/**
 	 * Determine whether a specified player's city can be placed on a specified vertex
+	 * This call should be happening after the player has already verified ability to purchase a city
 	 * 
 	 * @pre vertex != null, city != null
 	 * 
 	 * @post Return value is whether the city can be placed on the specified vertex
 	 */
-	public boolean canDoPlaceCityOnVertex(City city, Vertex vertex) {
-		// Ideally I should be able to ask the city which player it belongs to
-		// city not null, and has player, and does not already have a vertex
-		// vertex not null, and has a settlement owned by the same player as the city
+	public boolean canDoPlaceCityOnVertex(Player player, Vertex vertex) {
+		// Check that the player and vertex are not null, that the vertex has a settlement, and that the settlement is owned by the given player
+		if(player == null || vertex == null || vertex.hasMunicipal() == false || vertex.getMunicipal() instanceof City 
+				|| vertex.getMunicipal().getPlayer().getPlayerId() != player.getPlayerId()) {
+			return false;
+		}
 		return true;
 	}
 
 	/**
 	 * Places a city on a specified vertex
+	 * @throws AllPiecesPlayedException 
+	 * @throws InsufficientPlayerResourcesException 
+	 * @throws CannotBuyException 
 	 * 
 	 * @pre canDoPlaceCityOnVertex != false,  
 	 * 
 	 * @post city is placed on the specified vertex, or PlaceCityOnVertexException thrown
 	 */
-	public void placeCityOnVertex(City city, Vertex vertex) throws PlaceCityOnVertexException {
-		if(canDoPlaceCityOnVertex(city, vertex) == false) {
+	public void placeCityOnVertex(Player player, Vertex vertex) throws PlaceCityOnVertexException, CannotBuyException, InsufficientPlayerResourcesException, AllPiecesPlayedException {
+		if(canDoPlaceCityOnVertex(player, vertex) == false) {
 			throw new PlaceCityOnVertexException("canDoPlaceCityOnVertex = false");
 		}
 		// Place the city on the vertex
+		player.BuyCity(vertex);
 	}
-	
-
-	/**
-	 * Places a settlement on a vertex
-	 * 
-	 * @pre ArrayList settlement > 0
-	 * @pre A vertex must not be occupied by another settlement
-	 * @pre A vertex must be 2 or more borders away from the nearest settlement
-	 * @pre player must have 1 brick, 1 wheat, 1 wool, and 1 wood resource cards
-	 * 
-	 * @post remove settlement from ArrayList settlement 
-	 * @post settlement is placed on vertex
-	 */
-	   void placeSettlement(){}
-	   
-	/**
-	 * Removes a settlement and places a city on the vertex 
-	 * 
-	 * @pre ArrayList city > 0
-	 * @pre current players settlement is on vertex
-	 * @pre player must have 2 wheat and 3 ore resource cards
-	 * 
-	 * @post remove city from ArrayList city
-	 * @post city is placed on vertex
-	 */
-	   void placeCity(){}
 	
 	
 }

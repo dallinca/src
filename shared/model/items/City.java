@@ -1,5 +1,8 @@
 package shared.model.items;
 
+import shared.model.board.Vertex;
+import shared.model.player.Player;
+
 /**
  * Class stores the information about where cities are stored
  * 
@@ -7,6 +10,7 @@ package shared.model.items;
  *
  */
 public class City extends Municipal {
+
 	
 	/**
 	 * Initializes City
@@ -14,7 +18,10 @@ public class City extends Municipal {
 	 * @pre A Player object exists
 	 * 
 	 */
-	City(){}
+	public City(Player player){
+		setPlayer(player);
+	}
 	
 	public void hexesCityIsOn(){}
+
 }
