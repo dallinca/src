@@ -38,20 +38,15 @@ public class Bank {
 	private void initResourceCards() {
 		for (int i=0; i < resourceNumber; i++) {
 			// init wheat 
-			wheatDeck[i] = new ResourceCard();
-			wheatDeck[i].setResourceType(ResourceType.WHEAT);
+			wheatDeck[i] = new ResourceCard(ResourceType.WHEAT);
 			// init brick 
-			brickDeck[i] = new ResourceCard();
-			brickDeck[i].setResourceType(ResourceType.BRICK);
+			brickDeck[i] = new ResourceCard(ResourceType.BRICK);
 			// init lumber 
-			lumberDeck[i] = new ResourceCard();
-			lumberDeck[i].setResourceType(ResourceType.LUMBER);
+			lumberDeck[i] = new ResourceCard(ResourceType.LUMBER);
 			// init sheep
-			sheepDeck[i] = new ResourceCard();
-			sheepDeck[i].setResourceType(ResourceType.SHEEP);
+			sheepDeck[i] = new ResourceCard(ResourceType.SHEEP);
 			// init ore 
-			oreDeck[i] = new ResourceCard();
-			oreDeck[i].setResourceType(ResourceType.ORE);
+			oreDeck[i] = new ResourceCard(ResourceType.ORE);
 		}
 	}
 	
