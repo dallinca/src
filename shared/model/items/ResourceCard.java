@@ -6,7 +6,9 @@ public class ResourceCard {
 	
 	private ResourceType resourceType;
 	
-	public ResourceCard() {}
+	public ResourceCard() {
+		
+	}
 
 	public ResourceType getResourceType() {
 		return resourceType;
