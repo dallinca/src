@@ -27,7 +27,7 @@ public class Vertex {
 	 * 
 	 * @post Return value says whether the vertex has a municipal
 	 */
-	public boolean checkIfHasMunicipal() {
+	public boolean hasMunicipal() {
 		if(municipal == null) {
 			return false;
 		}
@@ -73,6 +73,14 @@ public class Vertex {
 
 	public void setVertexLocation(VertexLocation vertexLocation) {
 		this.vertexLocation = vertexLocation;
+	}
+
+	public Municipal getMunicipal() {
+		return municipal;
+	}
+
+	public void setMunicipal(Municipal municipal) {
+		this.municipal = municipal;
 	}
 	
 	

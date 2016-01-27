@@ -6,15 +6,12 @@ public class ResourceCard {
 	
 	private ResourceType resourceType;
 	
-	public ResourceCard() {
-		
+	public ResourceCard(ResourceType resourceType) {
+		this.resourceType = resourceType;
 	}
 
 	public ResourceType getResourceType() {
 		return resourceType;
 	}
 
-	public void setResourceType(ResourceType resourceType) {
-		this.resourceType = resourceType;
-	}
 }

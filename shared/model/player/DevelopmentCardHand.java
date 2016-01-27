@@ -2,7 +2,9 @@ package shared.model.player;
 
 import java.util.*;
 
+import shared.definitions.DevCardType;
 import shared.model.items.DevelopmentCard;
+import shared.model.player.exceptions.NullCardException;
 
 /**
  * The DevelopmentCards class keeps track of a players development cards 
@@ -17,10 +19,12 @@ import shared.model.items.DevelopmentCard;
 
 
 public class DevelopmentCardHand {
-	
-	private ArrayList<DevelopmentCard> developmentCards;
-	//private enum developmentCards {knight, progress, victoryPoint};
-    //private enum progressCards {roadBuilder, monopoly, yearOfPlenty};
+
+	private ArrayList<DevelopmentCard> soldierCards;
+	private ArrayList<DevelopmentCard> victoryPointCards;
+	private ArrayList<DevelopmentCard> roadBuilderCards;
+	private ArrayList<DevelopmentCard> monopolyCards;
+	private ArrayList<DevelopmentCard> yearOfPlentyCards;
      
     /**
 	 * Initializes DevelopmentCards
@@ -35,10 +39,27 @@ public class DevelopmentCardHand {
 	 * 
 	 * @param cards that need to be added
 	 * 
-	 * @pre None
+	 * @pre Card != null
 	 * @post cards added to ArrayList data structure
 	 */
-    void addCard(){}
+    void addCard(DevelopmentCard card) throws NullCardException {
+    	if(card == null) {
+    		throw new NullCardException("The card to be added to the players Development Cards is Null");
+    	} else if(card.getDevCardType() == null) {
+    		throw new NullCardException("The card to be added to the players Development Cards is not Null, but the Card type is null");
+    	}
+    	if(card.getDevCardType() == DevCardType.SOLDIER) {
+    		soldierCards.add(card);
+    	} else if(card.getDevCardType() == DevCardType.MONUMENT) {
+    		victoryPointCards.add(card);
+    	} else if(card.getDevCardType() == DevCardType.ROAD_BUILD) {
+    		roadBuilderCards.add(card);
+    	} else if(card.getDevCardType() == DevCardType.MONOPOLY) {
+    		monopolyCards.add(card);
+    	} else if(card.getDevCardType() == DevCardType.YEAR_OF_PLENTY) {
+    		yearOfPlentyCards.add(card);
+    	}
+    }
     
     /**
 	 * removes resource cards from player
@@ -46,7 +67,7 @@ public class DevelopmentCardHand {
 	 * @pre None
 	 * @post deleted from ArrayList data structure
 	 */
-    void removeCard(){}
+    void playDevelopmentCard(){}
     
 	/**
 	 * Gets the players development cards
@@ -55,5 +76,18 @@ public class DevelopmentCardHand {
 	 * @post Returns the players development cards
 	 */
 	public ArrayList<DevelopmentCard> getDevelopmentCards(){
-		return null;}
+		return null;
+	}
+	
+	/**
+	 * Gets the number of cards in the players hand
+	 * 
+	 * @pre none
+	 * 
+	 * @post
+	 */
+	public int getDevelopmentCardHandSize() {
+		return 0;
+	}
+	
 }

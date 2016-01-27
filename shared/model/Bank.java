@@ -101,6 +101,7 @@ public class Bank {
 					if (bankingPlayer.getHand()[i] == toTurnIn[j]) {
 						
 						Have to somehow figure this part out how to check these details out....
+						foreach loop maybe?
 						bankingPlayer.getHand()[i].type
 						
 						Then I would compare it to see which deck it belongs in.
